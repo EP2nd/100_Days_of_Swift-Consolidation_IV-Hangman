@@ -30,14 +30,14 @@ class ViewController: UIViewController {
         
         guessLetter = UITextField()
         guessLetter.translatesAutoresizingMaskIntoConstraints = false
-        guessLetter.font = UIFont.systemFont(ofSize: 32)
+        guessLetter.font = UIFont.systemFont(ofSize: 44)
         guessLetter.textAlignment = .center
         guessLetter.placeholder = "Tap to type in a letter."
         view.addSubview(guessLetter)
         
         clueForWord  = UILabel()
         clueForWord.translatesAutoresizingMaskIntoConstraints = false
-        clueForWord.font = UIFont.systemFont(ofSize: 44)
+        clueForWord.font = UIFont.systemFont(ofSize: 34)
         clueForWord.textAlignment = .center
         clueForWord.text = "A clue"
         view.addSubview(clueForWord)
@@ -67,17 +67,16 @@ class ViewController: UIViewController {
             clueForWord.heightAnchor.constraint(equalTo: view.layoutMarginsGuide.heightAnchor, multiplier: 0.03, constant: 30)
         ])
         
-        //loadGame()
+        loadGame()
     }
     
-    var wordsList = [String]()
     var lives = 7 {
         didSet {
             livesLeft.text = "Lives: \(lives)"
         }
     }
     
-    /*func loadGame() {
+    func loadGame() {
         var clueString = ""
         var wordString = ""
         
@@ -91,21 +90,18 @@ class ViewController: UIViewController {
                     let word = parts[0]
                     let clue = parts[1]
                     
-                    wordString += "\(word)"
-                    clueString += "\(clue)"
-                    
-                    //wordsList.append(wordString)
+                    wordString += "\(word)\n"
+                    clueString += "\(clue)\n"
                 }
             }
         }
-        //clueForWord.text = clueString.trimmingCharacters(in: .whitespacesAndNewlines)
-        //currentWord.text = wordString.trimmingCharacters(in: .whitespacesAndNewlines)
-    }*/
+        
+        clueForWord.text = clueString
+        currentWord.text = wordString
+    }
     
-    /*func submitLetter(_ sender: UITextField) {
-        guard let currentLetter = guessLetter.text else { return }
+    func submitLetter(_ sender: UITextField) {
         
-        
-    }*/
+    }
     
 }

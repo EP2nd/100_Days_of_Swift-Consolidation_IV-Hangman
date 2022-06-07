@@ -13,7 +13,7 @@
 		B8C12DE2284E35DD00EE55CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C12DE0284E35DD00EE55CA /* Main.storyboard */; };
 		B8C12DE4284E35DF00EE55CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C12DE3284E35DF00EE55CA /* Assets.xcassets */; };
 		B8C12DE7284E35DF00EE55CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C12DE5284E35DF00EE55CA /* LaunchScreen.storyboard */; };
-		B8C12DEF284FA13500EE55CA /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = B8C12DEE284FA13500EE55CA /* words.txt */; };
+		B8C12DF1284FE71A00EE55CA /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = B8C12DF0284FE71900EE55CA /* words.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		B8C12DE3284E35DF00EE55CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8C12DE6284E35DF00EE55CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8C12DE8284E35DF00EE55CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8C12DEE284FA13500EE55CA /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
+		B8C12DF0284FE71900EE55CA /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				B8C12DE3284E35DF00EE55CA /* Assets.xcassets */,
 				B8C12DE5284E35DF00EE55CA /* LaunchScreen.storyboard */,
 				B8C12DE8284E35DF00EE55CA /* Info.plist */,
-				B8C12DEE284FA13500EE55CA /* words.txt */,
+				B8C12DF0284FE71900EE55CA /* words.txt */,
 			);
 			path = "Consolidation_4-Hangman";
 			sourceTree = "<group>";
@@ -130,7 +130,7 @@
 			files = (
 				B8C12DE7284E35DF00EE55CA /* LaunchScreen.storyboard in Resources */,
 				B8C12DE4284E35DF00EE55CA /* Assets.xcassets in Resources */,
-				B8C12DEF284FA13500EE55CA /* words.txt in Resources */,
+				B8C12DF1284FE71A00EE55CA /* words.txt in Resources */,
 				B8C12DE2284E35DD00EE55CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
