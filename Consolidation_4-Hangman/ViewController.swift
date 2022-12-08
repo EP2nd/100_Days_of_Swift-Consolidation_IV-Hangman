@@ -1,14 +1,24 @@
+//
+//  ViewController.swift
+//  Consolidation_4-Hangman
+//
+//  Created by Edwin Przeźwiecki Jr. on 06/06/2022.
+//
+
 import UIKit
 
 class ViewController: UIViewController {
     
     var livesLabel: UILabel!
     var currentWord: UILabel!
-    var guessLetter: UITextField!
     var clueForWord: UILabel!
+    
+    var guessLetter: UITextField!
 
     override func viewDidLoad() {
+        
         view = UIView()
+        
         view.backgroundColor = .systemRed
         
         livesLabel = UILabel()
@@ -63,7 +73,9 @@ class ViewController: UIViewController {
 
     var usedLetters = [Character]()
     var promptWord = [String]()
+    
     var answer = ""
+    
     var guessedLetters = 0
     var lives = 7 {
         didSet {
@@ -79,6 +91,7 @@ class ViewController: UIViewController {
         
         if let gameFileURL = Bundle.main.url(forResource: "words", withExtension: "txt") {
             if let gameContent = try? String(contentsOf: gameFileURL) {
+                
                 var lines = gameContent.components(separatedBy: "\n")
                 lines.shuffle()
                 
@@ -93,7 +106,6 @@ class ViewController: UIViewController {
                 for letter in answer {
                     usedLetters.append(letter)
                     promptWord.append("_ ")
-                    
                 }
                 wordString += "\(promptWord.joined())"
                 clueString += "\(clue)"
@@ -113,7 +125,9 @@ class ViewController: UIViewController {
             if usedLetters.contains(Character(typedLetter)) {
                 for (index, letter) in usedLetters.enumerated() {
                     if letter == Character(typedLetter) {
+                        
                         promptWord[index] = typedLetter
+                        
                         currentWord.text = promptWord.joined().uppercased()
                         
                         guessedLetters += 1
@@ -122,6 +136,7 @@ class ViewController: UIViewController {
                         if score == answer.count {
                             let victoryAlertController = UIAlertController(title: "Well done!", message: "You avoided the gallows!", preferredStyle: .alert)
                             victoryAlertController.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: loadNextWord))
+                            
                             present(victoryAlertController, animated: true)
                         }
                     }
@@ -133,21 +148,25 @@ class ViewController: UIViewController {
                 if lives > 1 {
                     let mistakeAlertController = UIAlertController(title: "Sorry, no!", message: "Please pick another letter.", preferredStyle: .alert)
                     mistakeAlertController.addAction(UIAlertAction(title: "Damn...", style: .default))
+                    
                     present(mistakeAlertController, animated: true)
                 }
                 if lives < 1 {
                     let gameOverAlertController = UIAlertController(title: "Game over!", message: "If you believe in nirvana, you should try again!", preferredStyle: .alert)
                     gameOverAlertController.addAction(UIAlertAction(title: "Resurrect me, please!", style: .default))
+                    
                     present(gameOverAlertController, animated: true)
                 }
             }
         } else if typedLetter.count > 1 {
             let tooManyLettersAlertController = UIAlertController(title: "Too many letters!", message: "You are supposed to pick one.", preferredStyle: .alert)
             tooManyLettersAlertController.addAction(UIAlertAction(title: "I'm sorry!", style: .default))
+            
             present(tooManyLettersAlertController, animated: true)
         } else if typedLetter.count == 0 {
             let noLettersAlertController = UIAlertController(title: "No letter selected!", message: "Was that a mistap?", preferredStyle: .alert)
             noLettersAlertController.addAction(UIAlertAction(title: "Oops!", style: .default))
+            
             present(noLettersAlertController, animated: true)
         }
     }
@@ -170,7 +189,9 @@ class ViewController: UIViewController {
         alertController.addTextField()
         
         let submit = UIAlertAction(title: "Submit", style: .default) { [weak self, weak alertController] action in
+            
             guard let letter = alertController?.textFields?[0].text else { return }
+            
             self?.submitLetter(letter)
         }
         let cancel = UIAlertAction(title: "Cancel", style: .default)
